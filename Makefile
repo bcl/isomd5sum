@@ -72,5 +72,5 @@ archive:
 	@git archive --format=tar --prefix=isomd5sum-$(VERSION)/ HEAD |bzip2 > isomd5sum-$(VERSION).tar.bz2
 	@echo "The final archive is in isomd5sum-$(VERSION).tar.bz2"
 
-test:
-	$(PYTHON) ./testpyisomd5sum.py
+test:	pyisomd5sum.so
+	PYTHONPATH=. $(PYTHON) ./testpyisomd5sum.py
